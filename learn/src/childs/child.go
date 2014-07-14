@@ -18,14 +18,14 @@ func add(x, y int) int {
 }
 
 /**返回两个参数**/
-func swap(x, y string) (string , string ) {
+func swap(x, y string) (string, string) {
 	return y, x
 }
 
 /**返回方法中的局部变量*/
 func sprit(a int) (x, y int) {
-	x = a*10
-	y = x*a
+	x = a * 10
+	y = x * a
 	return
 }
 func doSwitch() {
@@ -40,13 +40,10 @@ func doSwitch() {
 	}
 	fmt.Println("\nWhen's Saturday?")
 
-
 	t := time.Now()
-	fmt.Println(t.Year(), t.YearDay(), t.Day(),t.Hour())
+	fmt.Println(t.Year(), t.YearDay(), t.Day(), t.Hour())
 
 	today := time.Now().Weekday()
-
-
 
 	fmt.Println(today)
 	fmt.Println(time.Now().Format(TimeFormat))
@@ -56,7 +53,6 @@ func doSwitch() {
 		return
 	}
 	fmt.Println(t.Format(TimeFormat1))
-
 
 	switch time.Saturday {
 	case today + 0:
@@ -73,7 +69,7 @@ func doSwitch() {
 func doIf() {
 	if os := runtime.GOOS; strings.EqualFold(os, "Linux") {
 		fmt.Println("EqualFold")
-	}else {
+	} else {
 		fmt.Println(" not EqualFold")
 	}
 }
@@ -92,9 +88,9 @@ func main() {
 	fmt.Println("")
 	j := 0
 	for j < 15 {
-		j++;
+		j++
 	}
 	fmt.Println(j)
-	doSwitch();
+	doSwitch()
 	doIf()
 }
