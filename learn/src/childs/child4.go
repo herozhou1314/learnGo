@@ -13,8 +13,8 @@ func (v *Vertex) abs() float64 {
 	return v.X + v.Y
 }
 type mystring string
-func (f mystring) Abs() mystring {
 
+func (f mystring) Abs() mystring {
 	return f
 }
 
