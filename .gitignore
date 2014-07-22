@@ -1,8 +1,8 @@
-<<<<<<< HEAD
+
 # Created by .gitignore support plugin (hsz.mobi)
 out/
 
-=======
+.idea/workspace.xml
 # Compiled Object files, Static and Dynamic libs (Shared Objects)
 *.o
 *.a
@@ -26,4 +26,4 @@ _testmain.go
 
 *.exe
 *.test
->>>>>>> ea2c6742d2874795a07335b9dbbef55682a22230
+
