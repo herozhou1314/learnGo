@@ -31,8 +31,6 @@ func sum(arg []int) int {
 	return a
 }
 
-
-
 func main() {
 	fmt.Println("Hello, 世界")
 
@@ -51,7 +49,7 @@ func main() {
 	fmt.Println(key)
 
 	s := "hello"
-	s = "c"+s[3:] // 字符串虽不能更改，但可进行切片操作
+	s = "c" + s[3:] // 字符串虽不能更改，但可进行切片操作
 	fmt.Printf("%s\n", s)
 	s12 := `hello word`
 	fmt.Println(s12)
@@ -71,6 +69,6 @@ func main() {
 	//	fmt.Println(maps)
 	fmt.Println("hello go vim")
 	//childs.doChild();
-	map2 := map[string]string{{"1":"111"}, {"2":"2222"}}
+	map2 := map[string]string{{"1": "111"}, {"2": "2222"}}
 	fmt.Println(map2)
 }
