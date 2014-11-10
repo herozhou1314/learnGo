@@ -1,10 +1,8 @@
 package main
 
-import ("fmt"
-	"subchild"
-)
+import "fmt"
 
 func main() {
 	fmt.Printf("Hello world!")
-	subchild.add(1,2)
+
 }

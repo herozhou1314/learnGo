@@ -2,19 +2,20 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 	"strings"
-	"log"
 )
 
 type MyMux struct{}
 type test_struct struct {
 	Test string
 }
+
 func (h MyMux) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	r.ParseForm()  //解析参数，默认是不会解析的
+	r.ParseForm() //解析参数，默认是不会解析的
 	fmt.Println(r)
-	 //这些信息是输出到服务器端的打印信息
+	//这些信息是输出到服务器端的打印信息
 	fmt.Println("path", r.URL.Path)
 	fmt.Println("scheme", r.URL.Scheme)
 	fmt.Println(r.Form["url_long"])

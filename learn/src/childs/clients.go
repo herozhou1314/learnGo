@@ -1,16 +1,16 @@
 package main
 
 import (
-	"net/http"
-	"io/ioutil"
 	"fmt"
+	"io/ioutil"
+	"net/http"
 	"strings"
 )
 
 func main() {
 	b := strings.NewReader(`{"Name":"httpclient"}`)
-	bodyType:="application/json"
-	reqest, err:= http.Post( "http://localhost:9092/",bodyType, b)
+	bodyType := "application/json"
+	reqest, err := http.Post("http://localhost:9092/", bodyType, b)
 	if err == nil {
 		body, _ := ioutil.ReadAll(reqest.Body)
 		fmt.Printf("Body: %s\n", body)
@@ -26,4 +26,3 @@ func main() {
 		fmt.Println(bodystr)
 	}*/
 }
-

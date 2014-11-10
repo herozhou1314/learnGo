@@ -1,12 +1,15 @@
 package main
+
 import (
 	"fmt"
 	"math"
 	"runtime"
 	"time"
 )
+
 var m, n int = 1, 5
 var s, d string = "a", "dd"
+
 func main() {
 	fmt.Println("Hello World!")
 	fmt.Println("Hello World!", math.Pi)
@@ -15,7 +18,7 @@ func main() {
 	}
 	a, b := add(1, 5, "a", "v")
 	fmt.Println(a, b)
-	x, y := add2(1, 5, "hello ", "world");
+	x, y := add2(1, 5, "hello ", "world")
 	fmt.Println(x, y)
 	fmt.Println(m, n)
 	sum := 1
@@ -27,13 +30,13 @@ func main() {
 	}
 	i := 0
 	for i < 100 {
-		i++;
+		i++
 	}
 	if a := 10; a < 5 {
 		fmt.Println("hello")
-	}else if a > 100 {
+	} else if a > 100 {
 		fmt.Println("hello---->>")
-	}else {
+	} else {
 		fmt.Println("hello--wwww")
 	}
 
@@ -47,17 +50,17 @@ func main() {
 		// plan9, windows...
 		fmt.Printf("%s.", os)
 	}
-	time1();
+	time1()
 }
-func add(x , y int, a , b string) (int, string ) {
-	return (x+y), a+b
+func add(x, y int, a, b string) (int, string) {
+	return (x + y), a + b
 }
-func add2(x, y int , str1, str2 string) (a int , b string) {
-	a = x+y
-	b = str1+str2
+func add2(x, y int, str1, str2 string) (a int, b string) {
+	a = x + y
+	b = str1 + str2
 	return
 }
-func time1(){
+func time1() {
 	fmt.Println("When's Saturday?")
 	today := time.Now().Weekday()
 	switch time.Saturday {

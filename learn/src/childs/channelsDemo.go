@@ -1,8 +1,10 @@
 package main
 
-import ("fmt"
+import (
+	"fmt"
+	"math/rand"
 	"time"
-	"math/rand")
+)
 
 func boring(msg string, c chan string) {
 	for i := 0; ; i++ {

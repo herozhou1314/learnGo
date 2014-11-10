@@ -11,12 +11,11 @@ func main() {
 
 	a := make([]int, 5)
 	arr1 := make([]string, 5)
-	arr1[0]="123"
-	arr1[1]="123"
+	arr1[0] = "123"
+	arr1[1] = "123"
 	arr1 = append(arr1, "hello")
 	arr1 = append(arr1, "hello")
 	printSlice1("arr1", arr1)
-
 
 	fmt.Println(arr1)
 	printSlice("a", a)

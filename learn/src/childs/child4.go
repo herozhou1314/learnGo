@@ -12,6 +12,7 @@ type Vertex struct {
 func (v *Vertex) abs() float64 {
 	return v.X + v.Y
 }
+
 type mystring string
 
 func (f mystring) Abs() mystring {
@@ -36,8 +37,6 @@ func main() {
 	fmt.Println(m1, has)
 	fmt.Println(m1.abs())
 
-	f :=mystring("hello")
+	f := mystring("hello")
 	fmt.Println(f.Abs())
 }
-
-
