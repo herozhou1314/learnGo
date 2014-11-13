@@ -27,3 +27,7 @@ _testmain.go
 *.exe
 *.test
 
+
+foo.db
+locked.sqlite
+test.db
