@@ -6,7 +6,6 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 	"log"
 	"time"
-	"net/smtp"
 )
 
 var err error
@@ -34,10 +33,8 @@ func main() {
 	//更新数据
 	stmt, err = db.Prepare("update userinfo set username=? where uid=?")
 	checkErr(err)
-
 	res, err = stmt.Exec("astaxieupdate", id)
 	checkErr(err)
-
 	affect, err := res.RowsAffected()
 	checkErr(err)
 
@@ -60,16 +57,10 @@ func main() {
 		fmt.Println(created)
 	}
 	//删除数据
-	//	stmt, err = db.Prepare("delete from userinfo where uid=?")
-	//	checkErr(err)
-	//
-	//	res, err = stmt.Exec(id)
-	//	checkErr(err)
-	//
-	//	affect, err = res.RowsAffected()
-	//	checkErr(err)
+	i, err := res.LastInsertId()
 
-	fmt.Println(affect)
+
+	deleteLast(db, i);
 
 
 
@@ -78,23 +69,33 @@ func main() {
 /***
 *create table
  */
-func createTable(db *DB) error {
+func createTable(db *sql.DB) error {
 	_, err = db.Exec("CREATE TABLE IF NOT EXISTS userinfo (uid INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT, departname TEXT,created Text);")
 	if err != nil {
 		log.Fatalln("could not create table:", err)
 	}
 	return err
 }
-func dropTable(db *DB) {
+func dropTable(db *sql.DB) {
 	//Drop, create and insert data into the test table
 	_, err = db.Exec("DROP TABLE IF EXISTS userinfo;")
 	if err != nil {
 		log.Fatalln("could not drop table:", err)
 	}
+}
 
+func deleteLast(db *sql.DB, index int64) {
+	fmt.Println("index-->", index)
+	stmt, _ := db.Prepare("delete from userinfo where uid=?")
+	res, err := stmt.Exec(index)
+	if err != nil {
+		affect, _ := res.RowsAffected()
+		fmt.Println(affect)
+	}
 }
 func checkErr(err error) {
 	if err != nil {
-		("error-->>:", err)
+		//panic( err)
+		log.Fatalln("could not drop table:", err)
 	}
 }
