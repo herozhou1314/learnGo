@@ -9,6 +9,7 @@ import (
 	"encoding/json"
 	"io"
 )
+
 type jsonBody struct {
 	Username   string
 	Password   string
@@ -16,10 +17,6 @@ type jsonBody struct {
 func sayhelloName(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()  //解析参数，默认是不会解析的
 	fmt.Println("==========")  //这些信息是输出到服务器端的打印信息
-	fmt.Println(r.Header)  //这些信息是输出到服务器端的打印信息
-	fmt.Println(r.PostForm)  //这些信息是输出到服务器端的打印信息
-	fmt.Println(r.Body)  //这些信息是输出到服务器端的打印信息
-	fmt.Println(r.Form)  //这些信息是输出到服务器端的打印信息
 	fmt.Println("path", r.URL.Path)
 	fmt.Println("scheme", r.URL.Scheme)
 	fmt.Println(r.Form["url_long"])
@@ -34,16 +31,15 @@ func sayhelloName(w http.ResponseWriter, r *http.Request) {
 	var s jsonBody
 	json.Unmarshal(result, &s)
 	fmt.Println(s)
+	//	Json 的 解析
 	var f interface{}
 	err := json.Unmarshal(result, &f)
 	//断言的方式
 	m := f.(map[string]interface{})
-	fmt.Println("userName--->>",m["userName"])
+	fmt.Println("userName--->>", m["username"])
 	if err == nil {
 		for k, v := range m {
-
-			fmt.Println(k,v)
-
+			fmt.Println(k, v)
 		}
 	}
 	io.WriteString(w, "\n hello, golang!\n")
