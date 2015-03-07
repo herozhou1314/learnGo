@@ -1,3 +1,3 @@
 learnGo
 =======
-Just learn Golang practise
+The Golang samples 
